@@ -1,68 +1,75 @@
-/* Стили для страницы */
+/* Общие стили для страницы */
 body {
     font-family: Arial, sans-serif;
-    background-color: #5b5b5b;
+    background-color: #f0f8ff;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-.container {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.1);
-    width: 1000px;
     text-align: center;
 }
 
-h1 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
+/* Стили для контейнера */
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
 }
 
+/* Стили для заголовков */
+h1 {
+    color: #333;
+}
+
+h2 {
+    color: #2c3e50;
+}
+
+/* Стили для формы */
 form {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
-label {
-    font-size: 16px;
-    margin-bottom: 5px;
-    text-align: left;
-}
-
-input {
+/* Стили для полей ввода */
+input[type="number"] {
     padding: 10px;
-    font-size: 16px;
-    margin-bottom: 15px;
+    border-radius: 4px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
+    font-size: 16px;
 }
 
+/* Стили для кнопки */
 button {
     padding: 10px;
-    background-color: #000000;
-    color: rgb(210, 10, 10);
-    font-size: 16px;
+    background-color: #3498db;
     border: none;
-    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #525252;
+    background-color: #2980b9;
 }
 
-.result {
+/* Стили для результата */
+#result {
     margin-top: 20px;
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 4px;
+    display: inline-block;
+    width: 100%;
+}
+
+#resultMessage {
     font-size: 18px;
-    color: #4400ff;
     font-weight: bold;
 }
