@@ -1,27 +1,27 @@
+// Получаем элементы с помощью их id
+const form = document.getElementById('squareRootForm');
+const numberInput = document.getElementById('numberInput');
+const resultMessage = document.getElementById('resultMessage');
+
 // Обработчик события для формы
-document.getElementById('cosine-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Отменяем стандартное поведение формы
+form.addEventListener('submit', function(event) {
+    event.preventDefault(); // предотвращаем перезагрузку страницы
 
-    // Получаем введённое значение
-    const inputValue = document.getElementById('numberInput').value;
+    // Получаем значение из поля ввода
+    const inputValue = numberInput.value;
 
-    // Проверяем, что введено число
-    if (inputValue === '') {
-        alert('Пожалуйста, введите число.');
-        return;
+    // Проверяем, что введено корректное число
+    if (inputValue && !isNaN(inputValue) && inputValue >= 0) {
+        // Вычисляем квадратный корень
+        const sqrtValue = Math.sqrt(inputValue).toFixed(2);
+
+        // Отображаем результат
+        resultMessage.textContent = `Квадратный корень из ${inputValue} равен: ${sqrtValue}`;
+    } else {
+        // Если введено не число или оно отрицательное
+        resultMessage.textContent = 'Пожалуйста, введите положительное число.';
     }
 
-    const x = parseFloat(inputValue);
-
-    // Проверка на валидность введённого числа
-    if (isNaN(x)) {
-        alert('Введено некорректное значение. Пожалуйста, введите числовое значение.');
-        return;
-    }
-
-    // Вычисление косинуса
-    const cosValue = Math.cos(x).toFixed(4); // Косинус и округление до 4 знаков после запятой
-
-    // Выводим результат на страницу
-    document.getElementById('result').innerText = `cos(${x}) = ${cosValue}`;
+    // Очищаем поле ввода после обработки
+    numberInput.value = '';
 });
